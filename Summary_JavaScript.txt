@@ -7310,22 +7310,65 @@ div class = "col-8"  - займе 8 з 12 в ширину
 
 
 
+table>   - 
+thead   - шапка сторінки
+tr - table row
+th - table head
+td  - table data
 
-Завдання 1
-Створіть об’єкт, що описує автомобіль (виробник, модель, рік
-випуску, середня швидкість), і наступні функції для роботи з цим
-об’єктом.
-1. Функція для виведення інформації про автомобіль на
-екран.
-2. Функція для підрахунку необхідного часу для подолання
-переданої відстані із середньою швидкістю. Враховуйте,
-що через кожні 4 години дороги, водієві необхідно робити
-перерву на 1 годину.
+DOM - Document Object Model
 
+Root Node  - document
 
+Element Node
 
 
 
+в HTML
+<button type="button" class="btn btn-success mt-2" id="add-btn">Add Product</button>  - вказуємо ID
+<button id="delete-btn" type="button" class="btn btn-danger">Delete All</button>
+
+
+в JS
+
+Для того щоб щось змінити, спочатку витягуємо обєкт
+
+const tableBody = document.getElementById('table-body');    - достаємо елемент по id (в цьому випадку `table-body`)
+const createBtn = document.getElementById('add-btn'); - ловимо кнопку по id
+
+const products = []; - робимо пустий масив 
+
+function getProductFromForm() 
+{
+    const modelInput = document.getElementById('modelInput');
+    const descInput = document.getElementById('descriptionInput');
+    const priceInput = document.getElementById('priceInput');
+    return {
+        id:products.length + 1,
+        model: modelInput.value,
+        description: descInput.value,
+        price: +priceInput.value
+    }
+}
+
+createBtn.onclick = ()=>{
+    console.log("On click handler from JS")
+    const product = getProductFromForm();
+    products.push(product);
+    tableBody.innerHTML += ` <tr class="table-info">
+                            <th >${product.id}</td>
+                            <td>${product.model}</td>
+                            <td>${product.description}</td>
+                            <td>${product.price}$</td>
+                        </tr>   `;
+}
+
+deleteBtn.onclick=()=>{
+    products = [];
+    tableBody.innerHTML = "";
+}
+
+все в одному контейнері
 
 
 
