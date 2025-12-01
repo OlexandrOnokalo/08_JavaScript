@@ -1,0 +1,34 @@
+<!-- Comment text  :
+     Ctrl+K+C - comment
+     Ctrl+K+U - uncomment
+     Ctrl+/ - comment/ uncomment
+	ctrl + d - виділяємо однакове
+     -->
+    <!-- Ctrl+K+F - format text --> зробити нормальне форматування
+    <!-- 
+       Огорнути якийсь контент всерединку тега
+    Ctrl+Shift+P -> wrap with abbreviaration + Tag name
+    Ctrl+Shift+P -> wrap with abbreviaration + Tag name.class Name
+      -->
+    <!-- emmet:
+     name tag + Tab -> <tag></tag>
+     add class : tag.selected   -> <tag class="selected"></tag>
+     with content : tag>span ->  <tag> <span></span></tag> (p>lorem)
+     add content : tag{Content}
+    multiple tag: tag*3 =  <tag></tag> <tag></tag> <tag></tag>
+
+p>b*3>lorem  дасть 
+<p>
+   <b>lorem</b> 
+   <b>lorem</b> 
+   <b>lorem</b> 
+</p>
+
+table>tr*5>th*5{content} 
+     <!-- change name of tag :
+      виділяємо тег для зміни і клікаємо Ctrl+D
+      до тих пір, поки не виділимо всі потрібні теги
+      Вказуємо нову назву
+      Для того, щоб помістити елементи в середику якогось тега
+      Виділяємо всі потрібні теги -> Ctrl+Shift + P -> wrap with abbreviaration +  назва тега , в який поміщаємо  
+
