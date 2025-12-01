@@ -7373,7 +7373,7 @@ deleteBtn.onclick=()=>{
 
 
 =======================================================
-05_Fetch
+06_Fetch
 JavaScript
 
 	HTTP Request & Response using Fetch()
