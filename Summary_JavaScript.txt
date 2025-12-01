@@ -35,6 +35,7 @@
 Це дає: повторне використання коду та логічну ієрархію.
 
 	Поліморфізм — це можливість використовувати один і той самий інтерфейс для різних типів об’єктів, які реалізують його по-різному.
+	
 
 Простіше:
 
@@ -7414,7 +7415,6 @@ fetch() — це інструмент, який йде в інтернет, от
 
 
 
-
 const gitHubUsers = "https://api.github.com/users";
 
 async function  showGitHubUsers()
@@ -7436,6 +7436,42 @@ async function showGitHubUserAvatar(login) {
 }
 
 showGitHubUserAvatar("OlexandrOnokalo")
+
+document.addEventListener("DOMContentLoaded", () => {
+     // тут пишеться код який повинен спрацювати при заході на сайт
+});
+
+function fetchCharacters() {
+    // then catch
+    const url = "https://thronesapi.com/api/v2/Characters";
+
+     try {
+         const response = await fetch(url);
+         const data = await response.json();  
+         console.log(data);
+     } catch (error) {
+         console.log(error);
+     }
+    const table = document.getElementById("gotTable");
+
+				те саме що:
+
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => { 
+        for (const char of data) {
+            table.innerHTML += `<tr>
+                        <th scope="row">${char.id}</th>
+                        <td>${char.fullName}</td>
+                        <td>${char.title}</td>
+                        <td><img class="img-scale" height="50" src="${char.imageUrl}" alt="${char.fullName}"></td>
+                    </tr>`;
+        }
+    })
+    .catch(error => console.log(error));
+}
+
 
 
 =================HTML==================================
@@ -7599,6 +7635,9 @@ visible / invisible -> видимість (користуйся з CSS)
 # 2) Додай відступи: mt-*, mb-*, mx-auto
 # 3) Додай вигляд: card, p-3, rounded, shadow
 # 4) Додай функціонал: form-control для input, img-fluid для зображень, btn для кнопок
+
+=======================================================
+
 
 
 
