@@ -1,0 +1,392 @@
+
+Bootstrap 5 Шпаргалка 
+
+------------------------------
+1. Контейнери (Containers)
+------------------------------
+.container        - фіксована ширина, адаптивна по
+                    брейкпойнтах
+.container-fluid  - ширина 100% viewport
+.container-sm     - фіксована ширина від 576px і вище
+.container-md     - від 768px і вище
+.container-lg     - від 992px і вище
+.container-xl     - від 1200px і вище
+.container-xxl    - від 1400px і вище
+
+------------------------------
+2. Сітка (Grid)
+------------------------------
+.row              - контейнер рядка для колонок
+.col              - авто ширина, рівномірний розподіл
+.col-#            - ширина в частинах з 12 (наприклад
+                    col-6 = 50%)
+.col-sm-#, .col-md-#, .col-lg-#, .col-xl-#, .col-xxl-#
+                  - ширина на відповідних брейкпойнтах
+
+Приклад:
+<div class="row">
+  <div class="col-6 col-md-4">...</div>
+  <div class="col-6 col-md-8">...</div>
+</div>
+
+------------------------------
+3. Відступи (Margins & Padding)
+------------------------------
+m  - margin (всі сторони)
+mt - margin-top
+mb - margin-bottom
+ml - margin-left
+mr - margin-right
+mx - margin-left & margin-right
+my - margin-top & margin-bottom
+
+p  - padding (всі сторони)
+pt - padding-top
+pb - padding-bottom
+pl - padding-left
+pr - padding-right
+px - padding-left & padding-right
+py - padding-top & padding-bottom
+
+Розміри (число від 0 до 5):
+0=0px, 1=0.25rem(4px), 2=0.5rem(8px), 3=1rem(16px),
+4=1.5rem(24px), 5=3rem(48px)
+
+Приклади:
+mt-3    -> margin-top: 1rem
+mx-2    -> margin-left & right: 0.5rem
+p-0     -> padding: 0
+py-4    -> padding-top & bottom: 1.5rem
+
+------------------------------
+4. Вирівнювання (Alignment)
+------------------------------
+Текст:
+.text-start   - ліворуч
+.text-center  - по центру
+.text-end     - праворуч
+
+Flex вертикальне вирівнювання:
+.align-items-start    - зверху
+.align-items-center   - по центру
+.align-items-end      - знизу
+
+Flex горизонтальне вирівнювання:
+.justify-content-start    - зліва
+.justify-content-center   - по центру
+.justify-content-end      - справа
+.justify-content-between  - простір між елементами
+.justify-content-around   - простір навколо елементів
+
+------------------------------
+5. Flexbox
+------------------------------
+.d-flex         - активує flex контейнер
+.flex-row       - напрямок по горизонталі (рядок,
+                   за замовчуванням)
+.flex-column    - напрямок по вертикалі (стовпець)
+.flex-wrap      - дозволяє перенос рядків
+.flex-nowrap    - забороняє перенос рядків
+
+------------------------------
+6. Порядок елементів (Order)
+------------------------------
+.order-0 ... .order-5  - порядок (0 за замовчуванням)
+.order-first           - ставить елемент першим
+.order-last            - ставить елемент останнім
+
+Можна з брейкпоінтами:
+.order-md-1, .order-lg-0 і т.п.
+
+------------------------------
+7. Ширина та висота (Width & Height)
+------------------------------
+.w-25, .w-50, .w-75, .w-100, .w-auto  - ширина (% або auto)
+.h-25, .h-50, .h-75, .h-100, .h-auto  - висота (% або auto)
+
+------------------------------
+8. Позиціонування (Position)
+------------------------------
+.position-static
+.position-relative
+.position-absolute
+.position-fixed
+.position-sticky
+
+------------------------------
+9. Інші корисні класи
+------------------------------
+.d-none          - сховати елемент
+.d-inline        - відображати inline
+.d-inline-block  - inline-block
+.d-block         - блочний елемент
+.visible         - видимий
+.invisible       - невидимий, але простір зберігається
+
+------------------------------
+10. Брейкпоінти (Media Queries)
+------------------------------
+xs: <576px
+sm: ≥576px
+md: ≥768px
+lg: ≥992px
+xl: ≥1200px
+xxl: ≥1400px
+
+------------------------------
+11. Приклад використання
+------------------------------
+<div class="container-md">
+  <div class="row justify-content-center align-items-center"
+       style="height:100vh;">
+    <div class="col-6 col-lg-4 p-3 border">
+      <p class="text-center mb-4">
+        Центрований блок із відступами
+      </p>
+      <button class="btn btn-primary w-100">
+        Кнопка на всю ширину
+      </button>
+    </div>
+  </div>
+</div>
+
+------------------------------
+Підсумок:
+- Контейнери: .container, .container-fluid і варіанти
+- Сітка: .row + .col-*
+- Відступи: m*, p* з розмірами 0-5
+- Вирівнювання: .text-*, .justify-content-*, .align-items-*
+- Flex: .d-flex + .flex-row/column + .flex-wrap
+- Порядок: .order-*
+- Розміри: .w-*, .h-*
+- Позиція: .position-*
+- Відображення: .d-*
+
+------------------------------
+
+
+ol-1..col-12      -> ширина колонки
+col-sm-*, col-md-* -> responsive колонки
+row               -> контейнер для колонок
+container         -> фіксована ширина сторінки
+container-fluid    -> повна ширина
+m-*, p-*           -> margin / padding
+mt-*, mb-*, mx-*   -> margin top / bottom / x-axis
+d-flex, justify-content-*, align-items-* -> flex utility
+img-fluid         -> адаптивні зображення
+form-control      -> стилізований input/textarea
+btn, btn-primary  -> кнопки
+
+Значення (Bootstrap): 0=0, 1=0.25rem, 2=0.5rem, 3=1rem, 4=1.5rem, 5=3rem, auto=auto
+
+
+col-md-6      -> на середніх екранах (>=768px) ширина 6/12 (50%)
+mx-auto       -> по горизонталі центр
+py-3          -> padding-top і padding-bottom = 1rem
+ms-2 / me-2   -> margin-start (ліворуч), margin-end (праворуч) — корисно для RTL/ліво-право нейтралітету
+g-3           -> gutter (відступ між колонками) 1rem
+
+# Display / Flex / Alignment
+d-block, d-inline, d-inline-block
+d-flex -> display:flex
+justify-content-center -> центрування по горизонталі у flex
+align-items-center -> вирівнювання по вертикалі у flex
+flex-column -> flex-direction: column
+
+# Width / Height / Text
+w-100 -> width:100%
+w-auto -> width:auto
+text-center, text-start, text-end -> вирівнювання тексту
+img-fluid -> max-width:100%; height:auto; (адаптивні зображення)
+
+# Кнопки і форми
+btn, btn-primary, btn-secondary, btn-outline-* -> стандартні класи кнопок
+form-control -> стилізований input / textarea / select
+input-group -> група інпутів з кнопками/іконками
+
+# Приклад форми:
+<form>
+  <input class="form-control mb-2" type="text" placeholder="Ім'я">
+  <input class="form-control mb-2" type="email" placeholder="Email">
+  <textarea class="form-control mb-2" rows="4" placeholder="Повідомлення"></textarea>
+  <button class="btn btn-primary" type="submit">Відправити</button>
+</form>
+
+
+badge, alert, card, nav, navbar, dropdown -> корисні компоненти Bootstrap
+rounded -> border-radius
+shadow -> тінь
+d-none -> display:none
+visible / invisible -> видимість (користуйся з CSS)
+
+
+<!-- ********** 3. Шаблони елементів (copy-paste ready) ********** -->
+<!-- Коментарі можна видалити. -->
+
+-- Центрована картка (логін / форма) --
+<div class="col-6 col-md-4 m-auto mt-5 card p-3" style="max-width:420px;">
+  <h2 class="text-center">Увійти</h2>
+  <form>
+    <input class="form-control mb-2" id="login" type="text" placeholder="Логін">
+    <input class="form-control mb-2" id="password" type="password" placeholder="Пароль">
+    <button class="btn btn-primary w-100" type="submit">Login</button>
+  </form>
+</div>
+
+-- Картка товару --
+<div class="card" style="max-width:320px;">
+  <img src="images/product.jpg" class="img-fluid card-img-top" alt="Назва продукту">
+  <div class="card-body">
+    <h5 class="card-title">Назва продукту</h5>
+    <p class="card-text">Короткий опис товару.</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="fw-bold">₴499</span>
+      <button class="btn btn-sm btn-success">Купити</button>
+    </div>
+  </div>
+</div>
+
+-- Галерея зображень (три в ряд) --
+<div class="row g-2">
+  <div class="col-12 col-sm-6 col-md-4">
+    <figure>
+      <img src="images/photo1.jpg" class="img-fluid rounded" alt="Фото 1" loading="lazy">
+      <figcaption class="small text-muted">Підпис 1</figcaption>
+    </figure>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4">
+    <img src="images/photo2.jpg" class="img-fluid rounded" alt="Фото 2" loading="lazy">
+  </div>
+  <div class="col-12 col-sm-6 col-md-4">
+    <img src="images/photo3.jpg" class="img-fluid rounded" alt="Фото 3" loading="lazy">
+  </div>
+</div>
+
+-- Текстовий блок / article --
+<article class="card p-3 mt-4">
+  <h3>Заголовок статті</h3>
+  <p>Тіло тексту. Можна використовувати <strong>жирний</strong>, <em>курсив</em>, списки:</p>
+  <ul>
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+  </ul>
+</article>
+
+-- Простий alert / повідомлення --
+<div class="alert alert-warning mt-3" role="alert">
+  <strong>Увага!</strong> Це тестове повідомлення.
+</div>
+
+-- Кнопки (варіанти) --
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-outline-danger">Outline Danger</button>
+
+-- Форма з інпутами і групою кнопок (форма контакту) --
+<form class="mt-4">
+  <div class="mb-2">
+    <label for="name" class="form-label">Ім'я</label>
+    <input id="name" class="form-control" type="text" placeholder="Ваше ім'я">
+  </div>
+  <div class="mb-2">
+    <label for="email" class="form-label">Email</label>
+    <input id="email" class="form-control" type="email" placeholder="email@example.com">
+  </div>
+  <div class="mb-2">
+    <label for="msg" class="form-label">Повідомлення</label>
+    <textarea id="msg" class="form-control" rows="4" placeholder="Текст повідомлення"></textarea>
+  </div>
+  <div class="d-flex gap-2">
+    <button class="btn btn-success" type="submit">Відправити</button>
+    <button class="btn btn-outline-secondary" type="reset">Очистити</button>
+  </div>
+</form>
+
+-- Нотифікація / badge --
+<span class="badge bg-primary">Новинка</span>
+
+-- Навігаційна панель (проста) --
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Brand</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Головна</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+# Як скласти елемент:
+# 1) Виріши макет: row + col-*
+# 2) Додай відступи: mt-*, mb-*, mx-auto
+# 3) Додай вигляд: card, p-3, rounded, shadow
+# 4) Додай функціонал: form-control для input, img-fluid для зображень, btn для кнопок
+
+=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://htmlpreview.github.io/?
+
+https://github.com/potapchukdmytro/JS_PD_411
+
+https://github.com/IliushynOlena/JS_PD_411/tree/main
+
+
+	Чтоб получить изменения с GitHub:
+	git pull
+
+	Чтоб отправить изменения:
+	
+git add .
+git commit -m "your message"
+git push
+
+
+
+Свяжи локальный Git с GitHub
+
+	В VS Code открой терминал:
+Ctrl + `
+Вводишь по очереди:
+	✔ Добавляем файлы
+git add .
+	✔ Коммит
+git commit -m "Initial commit"
+	✔ Связываем с GitHub
+git remote add origin https://github.com/ТВОЙ_НИК/09_JavaScript.git
+
+	3. Отправляем всё на GitHub (push)
+git branch -M main
+git push -u origin main
+	Теперь в GitHub появится весь проект.
+
+	🚀 Как делать PULL?
+	После первого пуша — всё просто:
+	Чтоб получить изменения с GitHub:
+git pull
+
+	Чтоб отправить изменения:
+git add .
+git commit -m "your message"
+git push
+
+https://github.com/OlexandrOnokalo/09_JavaScript.git
+
