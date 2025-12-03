@@ -7516,6 +7516,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 тут event  просто параметр
 
+let activeBox = null;
+
 function boxClick(event) {  
     if(activeBox) {
         activeBox.style.backgroundColor = noActiveColor;
