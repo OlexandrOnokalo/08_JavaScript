@@ -7473,6 +7473,94 @@ function fetchCharacters() {
 }
 
 =======================================================
+07_
+JavaScript
+
+Ивент через html
+
+<button onclick="btnHtmlClick()" class="mx-2 btn btn-primary">html event</button>
+
+function btnHtmlClick() {
+    alert("Html click")
+}
+
+	через object  - старіший варіант, тільки одну функцію 
+
+<button id="btnObject" class="mx-2 btn btn-secondary">object event</button>
+
+    const btnObject = document.getElementById("btnObject");
+    btnObject.onclick = btnObjectClick;
+
+через eventlistener - самий сучасний варіант, можна додавати більше функцій і писати прямо тут через лямбда вираз
+
+
+<button id="btnListener" class="mx-2 btn btn-warning">event listener</button>
+
+    const btnListener = document.getElementById("btnListener");
+    btnListener.addEventListener("click", btnEventListenerClick);
+
+подія після повної побудови сторінки
+і ивенти краще сюди додавати
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btnObject = document.getElementById("btnObject");
+    btnObject.onclick = btnObjectClick;
+
+    const btnListener = document.getElementById("btnListener");
+    btnListener.addEventListener("click", btnEventListenerClick);
+});
+
+
+
+робим одну функцію для різних дівок:
+
+тут event  просто параметр
+
+function boxClick(event) {  
+    if(activeBox) {
+        activeBox.style.backgroundColor = noActiveColor;
+    }
+    activeBox = event.target;  - важливо
+    activeBox.style.backgroundColor = activeColor;
+}
+
+а тут event це вже обєкт з купою інформації
+
+<div onclick="boxClick(event)" class="box"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
