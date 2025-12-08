@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HTML-сторінка зі списком новин
+  <title>HTML-сторінка з текстом і палітрою кольорів
   </title>
   <link rel="stylesheet" href="CSS/bootstrap.css" />
 </head>
@@ -12,15 +12,16 @@
 <body>
   <div class="container">
     <h4 class="mt-5">Завдання 2
-      Створіть HTML-сторінку з галереєю.
-      Одночасно на екрані відображається 1 зображення та 2 кнопки: Назад і Вперед.
-      При натисканні на кнопки зображення мають перемикатися у вказаному
-      порядку. Коли наступного/попереднього зображення не буде, то відповідну
-      кнопку необхідно блокувати. Збережіть зображення у заздалегідь
-      підготовленому масиві.
+Завдання 3 Створіть HTML-сторінку з текстом і палітрою кольорів. Натискаючи на колір палітри, колір тексту має змінюватися на обраний. Для вказівки, якій клітинці відповідає той чи інший колір, можна скористатися атрибутом data-color у кожній клітинці, а потім, за допомогою JS, отримувати необхідний колір із цього атрибуту. 
 
     </h4>
     <div class="container">
+      <div class="d-flex flex-column align-items-center">
+        <img id="galleryImage" height="300px"  claass=" mb-3" src="images/image1.jpg" alt="Gallery Image" />
+        <div>
+          <button id="prevBtn" class="btn btn-primary mr-2" disabled>Назад</button>
+          <button id="nextBtn" class="btn btn-primary">Вперед</button>
+        </div>
 
     </div>
 
