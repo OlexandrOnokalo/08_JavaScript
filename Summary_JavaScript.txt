@@ -7590,9 +7590,7 @@ function randomRgb() {
 box.remove()  - ми видаляємо обєкта
 contsiner removeChild("box") - видаляє в div з id контейнер елементи з event.target = box 
 
-inline !!!!!!!!!!!!
-!!!!!!!! flax 
-etc
+
 
 <input id="boxColor" type="color"> - інпут з вибором кольору
 
@@ -7660,6 +7658,125 @@ confirm
 fetch 
 
 window.scroll(0,0); - проскролити до початку сторінки
+
+
+
+========================================================
+10_Forms
+JavaScript
+
+Форми
+
+get post
+
+
+
+
+<body>
+        <h1 style="text-align: center;">Вхід</h1>
+        <form name="login" class="form-box">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span
+                        class="input-group-text"
+                        id="inputGroup-sizing-default"
+                        >Email</span
+                    >
+                </div>
+                <input
+                    type="email"  - тип інформазії для повернення, браузер пропонує збережені емейли і перевіряє @
+                    class="form-control"
+                />
+            </div>
+		</div>
+            
+ 
+
+const formData = new FormData(form); - зберігає філу форму як обєкт
+const values = Object.fromEntries(formData.entries());
+   - всі значення з обєкту форми
+
+
+<input type= - є багато типів форм.
+tel для телефону (хоча і звичайна стрінга)
+url   - посилання
+search - пошук
+color - (вискакує палітра) повертається HEX код
+
+
+checkbox - квадратик з залочкою, так або ні
+
+radio button  - може бути тільки один активний radiobutton, якщо у них один name !!!!!!!!
+
+щоб зробити по завмовчуванню є checked
+                    <input value="js" name="language" type="radio" checked/> 
+                    <label>JavaScript</label>
+
+час
+
+            <div>
+                <!-- тільки дата -->
+                <input type="date" name="date" value="2026-01-01"> 
+            </div>
+            <div>
+                <!-- дата та час -->
+                <input type="datetime-local" name="datetime">
+            </div>
+            <div>
+                <!-- тільки час -->
+                <input type="time" name="time">
+            </div>
+            <div>
+                <!-- тиждень -->
+                <input type="week" name="week">
+            </div>
+            <div>
+                <!-- місяць -->
+                <input type="month" name="month">
+            </div>
+
+range  - ползунок
+
+select - випадаючий список. Не є інпутом, але належить формі
+!!!!!!!!!!!!!
+
+file
+
+<input type="file" name="picture" accept="image/*" /> 
+
+щоб витягнути файли, є властивість файли
+
+!!!!!!!!!!!!!!!!!!!!!!!!!
+
+form["picture"].files
+
+const url = URL ?????????????????
+
+reset 
+
+????????
+
+textarea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
