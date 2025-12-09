@@ -7738,7 +7738,13 @@ radio button  - може бути тільки один активний radiobu
 range  - ползунок
 
 select - випадаючий список. Не є інпутом, але належить формі
-!!!!!!!!!!!!!
+
+                <select name="select" class="form-select">
+                    <option value="ua">Україна</option>
+                    <option value="us">Америка</option>
+                    <option value="sp">Іспанія</option>
+                    <option selected value="it">Італія</option>
+                </select>
 
 file
 
@@ -7750,11 +7756,9 @@ file
 
 form["picture"].files
 
-const url = URL ?????????????????
+const url = URL 
 
 reset 
-
-????????
 
 textarea
 

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Палітра кольорів</title>
+  <link rel="stylesheet" href="CSS\bootstrap.css">
+</head>
+
+<body class="bg-light py-4">
+  <div class="container" style="max-width: 900px;">
+    <div class="card shadow-sm">
+      <div class="card-body">
+
+        <h4 class="text-center mb-4">Палітра кольорів</h4>
+
+
+        <form id="colorForm" class="mb-4">
+
+          <div class="row g-2 justify-content-center">
+
+            <div class="col-4 col-md-2">
+              <input id="r" type="number"
+                     class="form-control"
+                     placeholder="R"
+                     min="0" max="255">
+            </div>
+
+            <div class="col-4 col-md-2">
+              <input id="g" type="number"
+                     class="form-control"
+                     placeholder="G"
+                     min="0" max="255">
+            </div>
+
+            <div class="col-4 col-md-2">
+              <input id="b" type="number"
+                     class="form-control"
+                     placeholder="B"
+                     min="0" max="255">
+            </div>
+
+          </div>
+
+
+          <div id="error" class="text-danger text-center mt-2 d-none">
+            Значення мають бути від 0 до 255
+          </div>
+
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary px-4">Add color</button>
+          </div>
+
+        </form>
+
+
+        <div id="palette" class="row g-3"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
