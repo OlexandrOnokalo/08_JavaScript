@@ -7765,9 +7765,94 @@ textarea
 
 
 
+=======================================================
+11_Cookie
+JavaScript
+
+Cookie - локальне сховище на стороні клієнта.
+Записується інформацію що до клієнта
+
+reload презавантажує сторінку і все почистилось. 
+І стирає локалізації, аккаунт, корзина ітд.
+От кукі це і зберігають
+
+1) Дані авторизації:
+   - session ID
+   - auth token
+   - refresh token
+
+2) Налаштування сайту:
+   - вибрана мова
+   - тема (dark/light)
+   - розмір/тип відображення контенту
+
+3) Дані покупок:
+   - корзина товарів (ID товарів)
+   - промокоди
+   - налаштування фільтрів
+
+4) Персоналізацію:
+   - вибрані місто/локація
+   - останні переглянуті товари
+   - вподобані категорії
+
+5) Поведінку користувача:
+   - аналітичні ідентифікатори (GA, Pixel)
+   - відслідковування сесії
+   - A/B тестування
+
+6) Технічну інформацію:
+   - прапорці "бачив попап"
+   - csrf token
+   - тимчасові статуси (наприклад, закритий модальний)
+
+Всі записи існують певний період. Браузер їх автоматично очищає
 
 
 
+document.cookie = "user=Alex; max-age=3600";
+
+обовязково:
+
+	path=/;   - що всі сторінки сайту можуть бачити ці кукі
+
+	і
+	
+	expires
+
+на приклад, задаємо expires на один день вперед
+    let date = new Date();
+    date.setDate(date.getDate() + 1)
+	document.cookie = "tmp=value; expires=${date.toUTCString()}; path=/"
+
+
+		// запис
+function setCookie(name, value, expires) {
+    document.cookie = `${name}=${value};path=/;expires=${expires}`;
+}
+
+function setCookieByDays(name, value, days) {
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    document.cookie = `${name}=${value};path=/;expires=${date.toUTCString()}`;
+}
+
+// читання
+function getCookie(name) {
+    const cookie = document.cookie.split("; ");
+    for (const item of cookie) {
+        const data = item.split("=");
+        if(data[0] === name) {
+            return data[1];
+        }
+    }
+    return null;
+}
+
+// видалення
+function deleteCookie(name) {
+    document.cookie = `${name}=;path=/;expires=Thu, 1 January 1970 00:00:00 GMT`
+}
 
 
 
