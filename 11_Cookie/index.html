@@ -11,23 +11,55 @@
 </head>
 
 <body>
-  <form id="form">
-    <div class="container d-flex flex-column col-md-5">
-      <h4 class="text-center mt-4">Палітра кольорів</h4>
-      <div class="text-center">
-        <label class="col-form-label mt-4 " for="inputDefault">Default input</label>
-        <input type="text" class="form-control " placeholder="Default input" id="inputDefault">
-      </div>
-      <div>
-        <label class="col-form-label mt-4 " for="inputDefault">Default input</label>
-        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-      </div>
-      <div>
-        <label class="col-form-label mt-4" for="inputDefault">Default input</label>
-        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <section id="createColorSection" class="mb-4">
+          <h2 class="h5 text-center mb-3">Create new color</h2>
+
+          <form id="colorForm" novalidate>
+            <div class="mb-3">
+              <label for="colorName" class="form-label">Name</label>
+              <input id="colorName" name="name" type="text" class="form-control" maxlength="30" required
+                aria-describedby="nameHelp">
+              <div id="nameError" class="invalid-feedback"></div>
+              <div id="nameHelp" class="form-text">Only letters.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="colorType" class="form-label">Type</label>
+              <select id="colorType" name="type" class="form-select" required>
+                <option value="RGB">RGB</option>
+                <option value="RGBA">RGBA</option>
+                <option value="HEX">HEX</option>
+              </select>
+              <div id="typeError" class="invalid-feedback"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="colorCode" class="form-label">Code</label>
+              <input id="colorCode" name="code" type="text" class="form-control" required aria-describedby="codeHelp"
+                placeholder="e.g. 255,0,100 or 255,0,100,0.5 or #FF00AA">
+              <div id="codeError" class="invalid-feedback"></div>
+              <div id="codeHelp" class="form-text">Format dipends on selected type.</div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <button id="saveBtn" type="button" class="btn btn-primary px-4">Save</button>
+            </div>
+
+
+            <div id="formError" class="mt-2 text-center text-danger" role="alert" aria-live="polite"
+              style="display:none;"></div>
+          </form>
+        </section>
       </div>
     </div>
-  </form>
+
+    <div class="row mt-5">
+      <!-- Тут буде сітка карток кольорів -->
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
