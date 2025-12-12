@@ -7765,7 +7765,7 @@ textarea
 
 
 
-=======================================================
+======================================================
 11_Cookie
 JavaScript
 
@@ -7853,6 +7853,90 @@ function getCookie(name) {
 function deleteCookie(name) {
     document.cookie = `${name}=;path=/;expires=Thu, 1 January 1970 00:00:00 GMT`
 }
+
+
+
+=====================================================
+12_LocalStoradge_Json
+JavaScript
+
+JSON = текстовий тип даних, допомагає перевести будь який обєкт в стрінгу для збереження
+///JSON — це формат зберігання та передачі даних у вигляді тексту,
+який дуже легко читається та працює у всіх мовах програмування.///
+
+in JSON:
+
+	{} - обєкти
+	[] - колекція/масив
+
+може бути стрінга (в ""), числове значення і буль - без "", також null
+
+const user = `{
+	"name": "John",
+	"age: 30,
+	"marks": [1,2,3]
+}`
+
+коли JSON йде як змінна в JS, то в ``
+а в самому файлі *.json без лапок
+
+JSON.stringify(obj)  // перетворює об'єкт → в строку
+JSON.parse(str)      // перетворює строку → назад в об'єкт
+
+
+
+LocalStorage — це сховище на стороні клієнта, де дані зберігаються постійно (після перезавантаження сторінки і навіть після закриття браузера).
+
+відмінності від кукі:
+Немає терміну життя
+Не відправляється через HTTP-запитом автоматично
+
+Ключові особливості:
+- зберігає дані у форматі строка (string);
+- обмеження розміру ~ 5MB;
+- дані не видаляються автоматично;
+- працює тільки в браузері на стороні клієнта.
+
+Тут зберігаються дані не конфідиційні
+
+збергається у вигляді key та value
+
+
+Як використовувати LocalStorage + JSON разом
+Запис об’єкта:
+	const user = {
+	  login: "Alex",
+	  age: 35
+	};
+
+	localStorage.setItem("user",JSON.stringify(user));
+
+Читання об’єкта
+	const saved = localStorage.getItem("user");
+	const userObj = JSON.parse(saved);
+	console.log(userObj.login);  // "Alex"
+
+Перевірка: чи є дані?
+	if (localStorage.getItem("user")) {
+		console.log("Є збережений користувач");
+	}
+
+Оновлення значення в LocalStorage
+	let obj = JSON.parse(localStorage.getItem("user"));
+	obj.age = 40;
+
+	localStorage.setItem("user", JSON.stringify(obj));
+
+Видалити конкретний ключ
+	localStorage.removeItem("user");
+	
+
+
+
+
+
+
+
 
 
 
