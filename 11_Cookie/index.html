@@ -12,6 +12,7 @@
 
 <body>
   <div class="container py-4">
+
     <div class="row justify-content-center">
       <div class="col-3">
         <section id="createColorSection" class="mb-4">
@@ -20,8 +21,7 @@
           <form id="colorForm" novalidate>
             <div class="mb-3">
               <label for="colorName" class="form-label">Name</label>
-              <input id="colorName" name="name" type="text" class="form-control" maxlength="30" required
-                aria-describedby="nameHelp">
+              <input id="colorName" name="name" type="text" class="form-control" maxlength="30" required aria-describedby="nameHelp">
               <div id="nameError" class="invalid-feedback"></div>
               <div id="nameHelp" class="form-text">Only letters.</div>
             </div>
@@ -48,17 +48,21 @@
               <button id="saveBtn" type="button" class="btn btn-primary px-4">Save</button>
             </div>
 
-
-            <div id="formError" class="mt-2 text-center text-danger" role="alert" aria-live="polite"
-              style="display:none;"></div>
+            <div id="formError" class="mt-2 text-center text-danger" role="alert" aria-live="polite" style="display:none;"></div>
           </form>
         </section>
       </div>
     </div>
 
-    <div class="row mt-5">
-      <!-- Тут буде сітка карток кольорів -->
-    </div>
+    
+    <section id="paletteSection" class="mt-5">
+      <h3 class="h5 text-center mb-3">Палітра кольорів</h3>
+
+      <div id="colorsRow" class="row g-3">
+        
+      </div>
+    </section>
+
   </div>
 
   <script src="main.js"></script>
