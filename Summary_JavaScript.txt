@@ -7933,10 +7933,123 @@ LocalStorage — це сховище на стороні клієнта, де д
 
 
 
+========================================================
+13_Destructuring_Spread_Interval_Timeout
+JavaScript
+
+    // Spread - оператор ... 
+
+	
+    const arr1 = [1, 555, 4, 67, 32, 35, 57, 83, 69, 9];
+    const arr2 = [...arr1]; - так копцюєтся масив
+	
+	const a = [1, 2];
+	const b = [3, 4];
+
+	const c = [...a, ...b];
+	console.log(c); // [1,2,3,4]
+	
+	
+Перезапис властивостей:
+	const updated = { ...user, name: "Oleh" };
+	
+обєднання:
+	const user = { name: "Alex" };
+	const info = { age: 30 };
+
+	const fullUser = { ...user, ...info };
+	
+	 
+	
+destructuring (деструктуризація) - замість виписувати кожне поле з обєкта, одною строкою перечишляєш всі поля що треба і при цьому автоматично створюються замінні
+
+	const inputName = document.getElementById("name");
+    const {value, name} = inputName; 
+		
+		те саме що
+		
+	const value = inputName.value;
+	const name = inputName.name;
+	
+	
+	const user = {
+	  name: "Alex",
+	  age: 30
+	};
+
+	const { name, age } = user;
+	console.log(name); // Alex
+	
+	
+	
+const arr1 = [1,555,4,67,32,35,57,83,69,9];
+    const [first, second] = arr1;
+- створиться дві змінні, яки будуть мати в собі перший і другий елемент масиву
+
+    const state = [5, () => {}];
+    const [number, setNumber] = state; - функцію також можна зберігти автоматично в змінну
+	
+
+ще приклад:
+
+    const tag = {
+        name: "div",
+        width: "100px",
+        height: "50px",
+        color: "black",
+        id: "box",
+    };
+
+    function boxArea({ width, height }) {
+        if (!width || !height) {
+            return 0;
+        }
+
+        const wInt = parseInt(width.split("px")[0]);
+        const hInt = parseInt(height.split("px")[0]);
+        return wInt * hInt;
+    }
+
+    console.log(boxArea(tag));
+	
 
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
