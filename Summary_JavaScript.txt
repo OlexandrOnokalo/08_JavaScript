@@ -8015,21 +8015,232 @@ const arr1 = [1,555,4,67,32,35,57,83,69,9];
 
 
 
+????????????????????????
 
+с 12 скопировать окно логина
+
+prettier code formater?????????????????
+
+========================================================
+14_API
+JavaScript
+	
+API в контексті JavaScript — це набір правил, об’єктів і методів, через які JavaScript може взаємодіяти з чимось зовнішнім: браузером, сервером, операційною системою або стороннім сервісом.
+
+Fetch API надає JavaScript для роботи з запитами та відповідями HTTP. Він також надає глобальний метод fetch(), який дозволяє легко та логічно отримувати ресурси через мережу асинхронно.	
 	
 	
+Формування запиту
+
+const newsApiUrl = "https://newsapi.org/v2/everything?apiKey=eef038525fa7401d8dfe7cf1a9006b10&q=it&pageSize=20&language=uk"
+
+спочатку адреса самомго API 
+https://newsapi.org/v2/everything
 	
+? це початок параметрів
+пишеться ключ-значення
+
+?apikey=asdhdagafagaq і & і наступне
 	
+?apiKey=eef038525fa7401d8dfe7cf1a9006b10 & q=it & pageSize=20 & language=uk	 (звісно без пробілів)
+
+
+
+
+
+
+
+--JS:
+async function fetchNews(keyword) {
+
+	//в функцію передається ключове слово і втавляється в посилання як один з аргументів
+
+
+    const newsApiUrl =       `https://newsapi.org/v2/everything?apiKey=eef038525fa7401d8dfe7cf1a9006b10&q=${keyword}&pageSize=20&language=uk`;   
+
+    try {
+        const response = await fetch(newsApiUrl);
+
+        if (!response.ok) {
+            console.log(response.status);
+            return;
+        }
+
+        const data = await response.json();
+        const { articles } = data;
+        displayArticles(articles);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function searchHandle(event) {
 	
+	//кнопка пошуку 
+
+    event.preventDefault(); //зупиняємо стандартну поведінку - перезагрузку сторінку
 	
+    const form = event.target;
 	
+    const search = form["search"].value.trim(); //берем значення з поля з неймом search 
 	
+    const keyword = search.length == 0 ? "it" : search; //перевірка якщо в search пусто то ставим дефолтне ІТ
 	
+    fetchNews(keyword);
 	
+    form.reset(); //очищаємо форму
+}
+
+function displayArticles(articles) {
+    const row = document.getElementById("row"); //контейнер в який будем добавляти картки
 	
+    row.innerHTML = ""; //очищаємо контейнер
+
+    for (const article of articles) {
+        const child = getArticleCard(article);
+        row.appendChild(child);
+    } 
+}
+
+function getArticleCard(article) {
+    const defaultImage = "https://www.bblf.bg/img/default-news-image.png";
+
+    const div = document.createElement("div"); //створюємо дів 
+    div.classList.add("col-3"); //додаємо діву класс
+    div.innerHTML = `
+		<a href="${article.url}">
+		<div class="card h-100 card-scale">
+		
+		<img class="card-img-top" src="${
+			article.urlToImage ? article.urlToImage : defaultImage
+		}" alt="${article.title}" />
+		<div class="card-body">
+		<h5 class="card-title">
+		${article.title}
+					</h5>
+					<h6>${article.publishedAt}</h6>
+					<p class="card-text">
+						${
+							!article.description
+								? "Опис десь загубився"
+								: article.description
+						}
+					</p>
+				</div>
+			</div>
+			</a>`; //от тут закінчується innerHTML
+    return div;
+}
+
+document.addEventListener("DOMContentLoaded", () => fetchNews("it")); //при завантаженні по дефолту ІТ
 	
+--HTML:
 	
-	
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>News api</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"
+                                >Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >Dropdown</a
+                            >
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#"
+                                    >Another action</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                >
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"
+                                    >Separated link</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="d-flex" onsubmit="searchHandle(event)">
+                        <input
+                            name="search"
+                            class="form-control me-sm-2"
+                            type="search"
+                            placeholder="Search"
+                        />
+                        <button
+                            class="btn btn-secondary my-2 my-sm-0"
+                            type="submit"
+                        >
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+
+        <div class="container mt-4">
+            <div class="row row-gap-4" id="row">
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
 	
 	
 	
