@@ -8245,11 +8245,35 @@ document.addEventListener("DOMContentLoaded", () => fetchNews("it")); //при �
 	
 	
 	
+З пагінацією - https://github.com/potapchukdmytro/JS_PD_411/tree/main/14_api
+
+	
+========================================================15_Exam
+JavaScript
+
+Геолокація
+
+navigator.geolocation.getCurrentPosition(succesPosition, errorPosition);
+????????????????????????
+	
+Локація по IP location
+
+	const url = " ????????????????????
 	
 	
 	
-	
-	
+https://ip-api.com/	
+
+Зображення
+https://openweathermap.org/weather-conditions#Icon-list
+
+https://openweathermap.org/img/wn/{icon_code}@2x.png - 2х
+ 
+https://openweathermap.org/img/wn/{icon_code}.png - стандарт
+
+
+час unix timestamp
+
 	
 	
 	
