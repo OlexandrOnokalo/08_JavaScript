@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Time Tools</title>
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+</head>
+
+<body>
+    <div class="bg-dark text-light">
+
+        <div class="container py-5">
+
+            <h1 class="text-center mb-4">Робота з часом</h1>
+
+
+            <div class="card bg-secondary mb-4">
+                <div class="card-body text-center">
+                    <h4>Годинник реального часу</h4>
+                    <div id="clock" class="display-4 fw-bold">00:00:00</div>
+                </div>
+            </div>
+
+
+            <div class="card bg-secondary mb-4">
+                <div class="card-body text-center">
+                    <h4>Таймер зворотного відліку</h4>
+
+                    <input type="number" id="timerInput" class="form-control mb-3" placeholder="Введіть час у секундах">
+
+                    <div class="mb-3">
+                        <button id="timerStart" class="btn btn-success me-2">Старт</button>
+                        <button id="timerStop" class="btn btn-danger">Стоп</button>
+                    </div>
+
+                    <div id="timerDisplay" class="fs-3">00</div>
+                    <div id="timerMessage" class="text-warning mt-2"></div>
+                </div>
+            </div>
+
+
+            <div class="card bg-secondary">
+                <div class="card-body text-center">
+                    <h4>Секундомір</h4>
+
+                    <div id="stopwatch" class="fs-3 mb-3">00:00:00</div>
+
+                    <button id="swStart" class="btn btn-success me-2">Старт</button>
+                    <button id="swStop" class="btn btn-danger me-2">Стоп</button>
+                    <button id="swReset" class="btn btn-warning">Скинути</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
