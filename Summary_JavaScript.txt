@@ -8248,18 +8248,36 @@ document.addEventListener("DOMContentLoaded", () => fetchNews("it")); //при �
 З пагінацією - https://github.com/potapchukdmytro/JS_PD_411/tree/main/14_api
 
 	
-========================================================15_Exam
+========================================================
+15_Exam
 JavaScript
 
 Геолокація
 
 navigator.geolocation.getCurrentPosition(succesPosition, errorPosition);
-????????????????????????
+
+
+
+
+
 	
 Локація по IP location
 
-	const url = " ????????????????????
+const url = "http://ip-api.com/json";
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        const {lat, lon} = data;
+        setUserCity(lat, lon);
+    })
+    .catch(err => console.error(err));
 	
+	
+	
+	
+	
+	
+
 	
 	
 https://ip-api.com/	
